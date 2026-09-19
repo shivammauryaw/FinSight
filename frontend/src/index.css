@@ -18,6 +18,7 @@
   }
 
   .dark {
+    color-scheme: dark;
     --background: #020617;
     --surface: #0f172a;
     --primary: #ffffff;
