@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: finsight-backend
+  config:
+    import: optional:file:../.env[.properties]
+  
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: 86400000 # 1 day default
+    refresh-expiration-ms: 1296000000 # 15 days
+  gemini:
+    api-key: ${GEMINI_API_KEY}
