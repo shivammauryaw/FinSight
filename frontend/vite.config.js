@@ -7,13 +7,19 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.svg', 'favicon.png'],
       manifest: {
         name: 'FinSight',
         short_name: 'FinSight',
         description: 'AI-powered Personal Finance & Expense Analytics Web Application',
         theme_color: '#0f172a',
         icons: [
+          {
+            src: 'favicon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'any maskable'
+          },
           {
             src: 'favicon.png',
             sizes: '192x192 512x512',
